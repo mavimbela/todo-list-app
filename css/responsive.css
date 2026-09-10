@@ -1,0 +1,231 @@
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+    }
+    
+    .container {
+        padding: var(--spacing-sm);
+    }
+    
+    .header {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .title {
+        font-size: 1.75rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-form {
+        flex-direction: column;
+    }
+    
+    .add-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    :root {
+        --spacing-md: 0.75rem;
+        --spacing-lg: 1rem;
+    }
+    
+    .container {
+        padding: var(--spacing-xs);
+    }
+    
+    .header {
+        padding: var(--spacing-md) var(--spacing-sm);
+        border-radius: var(--radius-md);
+    }
+    
+    .header-content {
+        gap: var(--spacing-sm);
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .theme-btn {
+        min-width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+    }
+    
+    .input-section {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .input-form {
+        gap: var(--spacing-xs);
+    }
+    
+    .input-field {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .add-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        min-width: 60px;
+        font-size: 0.9rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .filter-buttons {
+        gap: var(--spacing-xs);
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .todo-item {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+    
+    .todo-text {
+        font-size: 0.95rem;
+    }
+    
+    .todo-checkbox {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+    
+    .delete-btn {
+        font-size: 1.1rem;
+        min-width: 36px;
+        height: 36px;
+    }
+    
+    .clear-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .empty-message {
+        font-size: 1rem;
+    }
+    
+    .footer-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Extra large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+    
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xs);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch target sizes */
+    button,
+    input,
+    .delete-btn,
+    .filter-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .filter-btn:hover {
+        transform: none;
+    }
+    
+    .add-btn:hover {
+        transform: none;
+    }
+    
+    .todo-item:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode media query (respects system preference) */
+@media (prefers-color-scheme: dark) {
+    body {
+        color-scheme: dark;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+    :root {
+        --border-color: currentColor;
+    }
+    
+    .todo-item {
+        border: 2px solid currentColor;
+    }
+    
+    .filter-btn {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

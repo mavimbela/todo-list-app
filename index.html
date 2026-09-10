@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern to-do list application with local storage">
+    <meta name="keywords" content="todo, tasks, productivity, local-storage">
+    <meta name="theme-color" content="#3498db">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">📝 My Tasks</h1>
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle theme" title="Toggle dark/light mode">
+                    🌙
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <form id="todoForm" class="input-form">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="input-field" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                        maxlength="100"
+                        required
+                    >
+                    <button type="submit" class="add-btn" aria-label="Add task">Add</button>
+                </form>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total</span>
+                        <span class="stat-value" id="totalCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Active</span>
+                        <span class="stat-value" id="activeCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Completed</span>
+                        <span class="stat-value" id="completedCount">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Buttons -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button 
+                        class="filter-btn active" 
+                        data-filter="all"
+                        aria-label="Show all tasks"
+                    >
+                        All
+                    </button>
+                    <button 
+                        class="filter-btn" 
+                        data-filter="active"
+                        aria-label="Show active tasks"
+                    >
+                        Active
+                    </button>
+                    <button 
+                        class="filter-btn" 
+                        data-filter="completed"
+                        aria-label="Show completed tasks"
+                    >
+                        Completed
+                    </button>
+                </div>
+            </section>
+
+            <!-- Todo List -->
+            <section class="todo-section">
+                <ul id="todoList" class="todo-list" aria-label="Task list">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+                <div id="emptyState" class="empty-state">
+                    <p class="empty-message">🎉 No tasks yet! Add one to get started.</p>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section">
+                <button 
+                    id="clearCompletedBtn" 
+                    class="clear-btn"
+                    aria-label="Clear all completed tasks"
+                >
+                    Clear Completed
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">&copy; 2024 To-Do List App. Built with ❤️ using vanilla JavaScript.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
